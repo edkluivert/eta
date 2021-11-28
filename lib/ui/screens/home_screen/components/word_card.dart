@@ -40,8 +40,6 @@ class WordCard extends StatefulWidget {
   const WordCard({Key? key}) : super(key: key);
 
 
-
-
   @override
   _WordCard createState() => _WordCard();
 
@@ -58,7 +56,7 @@ class _WordCard extends State<WordCard>{
 
   Widget build(BuildContext context) {
     return Container(
-      width: 360.w,
+      width: 380.w,
       height: 280.h,
       decoration: BoxDecoration(
           color : primaryColor,
