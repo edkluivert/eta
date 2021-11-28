@@ -1,15 +1,19 @@
 import 'dart:ui';
-
+import 'package:eta/config/constants.dart';
 import 'package:eta/config/palette.dart';
 import 'package:eta/config/resources.dart';
-import 'package:eta/presentation/screens/home_screen/components/word_card.dart';
+import 'package:eta/models/word.dart';
+import 'package:eta/ui/screens/home_screen/components/word_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
+
 
 class Body extends StatelessWidget{
   const Body({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +58,7 @@ class Body extends StatelessWidget{
               ),
             ),
             SizedBox(height: 70.h,),
-            const WordCard(word: "Hello", speechPart: "noun", definition:"Greeting in english")
+             const WordCard()
           ],
         ),
       ),

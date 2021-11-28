@@ -1,9 +1,11 @@
-import 'package:eta/presentation/screens/home_screen/home_screen.dart';
+
+import 'package:eta/config/palette.dart';
+import 'package:eta/ui/screens/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'config/palette.dart';
+
 
 void main() {
   runApp(const MyApp());

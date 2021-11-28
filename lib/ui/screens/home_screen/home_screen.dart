@@ -1,5 +1,7 @@
-import 'package:eta/presentation/screens/home_screen/components/body.dart';
+
 import 'package:flutter/material.dart';
+
+import 'components/body.dart';
 
 class HomeScreen extends StatelessWidget{
   @override
