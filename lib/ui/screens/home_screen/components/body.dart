@@ -2,16 +2,17 @@ import 'dart:ui';
 import 'package:eta/config/constants.dart';
 import 'package:eta/config/palette.dart';
 import 'package:eta/config/resources.dart';
-import 'package:eta/models/word.dart';
+import 'package:eta/ui/controller/home_controller.dart';
 import 'package:eta/ui/screens/home_screen/components/word_card.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
+import 'package:shimmer/shimmer.dart';
 
 
-class Body extends StatelessWidget{
+
+class Body extends GetView<HomeController>{
   const Body({Key? key}) : super(key: key);
 
 
@@ -58,7 +59,27 @@ class Body extends StatelessWidget{
               ),
             ),
             SizedBox(height: 70.h,),
-             const WordCard()
+             controller.obx((data)
+             => WordCard(word: data!),
+            onLoading: Shimmer.fromColors(
+              baseColor: Colors.grey.shade300,
+              highlightColor: Colors.grey.shade100,
+              //enabled: true,
+              child: Container(
+                width: 380.w,
+                height: 280.h,
+                decoration: BoxDecoration(
+                    color : primaryColor,
+                    borderRadius: BorderRadius.circular(10.r)
+                ),
+              ),
+            ),
+            onError: (error)=>Text(error.toString(), style: GoogleFonts.poppins(
+              fontSize: 14.sp,
+              color: Colors.white,
+              fontWeight: FontWeight.w500
+            ),)
+             )
           ],
         ),
       ),

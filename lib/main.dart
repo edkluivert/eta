@@ -1,13 +1,16 @@
 
 import 'package:eta/config/palette.dart';
+import 'package:eta/di/app_binding.dart';
 import 'package:eta/ui/screens/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 
 
 void main() {
+  AppBinding().dependencies();
   runApp(const MyApp());
 }
 
@@ -35,12 +38,12 @@ class MyApp extends StatelessWidget {
 
     return ScreenUtilInit(
         designSize: const Size(427,970),
-    builder: ()=> MaterialApp(
+    builder: ()=> GetMaterialApp(
       title: 'Word of the day',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: HomeScreen() ,
+      home: const HomeScreen() ,
       debugShowCheckedModeBanner: false,
       )
     );
